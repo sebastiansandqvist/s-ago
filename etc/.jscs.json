@@ -1,0 +1,62 @@
+{
+    "disallowCapitalizedComments": true,
+    "disallowEmptyBlocks": true,
+    "disallowImplicitTypeConversion": ["numeric", "boolean", "binary", "string"],
+    "disallowKeywords": ["with", "void", "do"],
+    "disallowMixedSpacesAndTabs": true,
+    "disallowMultipleLineStrings": true,
+    "disallowMultipleSpaces": true,
+    "disallowMultipleVarDecl": "exceptUndefined",
+    "disallowNewlineBeforeBlockStatements": true,
+    "disallowNotOperatorsInConditionals": true,
+    "disallowPaddingNewlinesBeforeKeywords": ["catch"],
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpaceBeforePostfixUnaryOperators": true,
+    "disallowSpacesInCallExpression": true,
+    "disallowSpacesInFunction": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowSpacesInsideArrayBrackets": true,
+    "disallowSpacesInsideBrackets": true,
+    "disallowSpacesInsideObjectBrackets": true,
+    "disallowSpacesInsideParentheses": true,
+    "disallowTrailingComma": true,
+    "disallowTrailingWhitespace": "ignoreEmptyLines",
+    "disallowYodaConditions": true,
+    "maximumLineLength": {
+        "value": 120,
+        "allowComments": true,
+        "allowRegex": true
+    },
+    "requireBlocksOnNewline": true,
+    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "requireCapitalizedConstructors": true,
+    "requireCommaBeforeLineBreak": true,
+    "requireCurlyBraces": true,
+    "requireDotNotation": true,
+    "requireKeywordsOnNewLine": ["catch", "else"],
+    "requireLineBreakAfterVariableAssignment": true,
+    "requireOperatorBeforeLineBreak": true,
+    "requirePaddingNewLinesAfterUseStrict": true,
+    "requirePaddingNewlinesBeforeKeywords": ["for", "if", "switch", "try", "while"],
+    "requireParenthesesAroundIIFE": true,
+    "requireSemicolons": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "requireSpaceAfterKeywords": ["for", "while", "if", "else", "switch", "case", "try", "typeof", "return"],
+    "requireSpaceBeforeBinaryOperators": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpaceBetweenArguments": true,
+    "requireSpacesInConditionalExpression": true,
+    "requireSpacesInForStatement": true,
+    "requireSpacesInFunction": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "safeContextKeyword": "that",
+    "validateIndentation": "\t",
+    "validateParameterSeparator": ", ",
+    "validateQuoteMarks": {
+        "mark": true,
+        "escape": true
+    }
+}
