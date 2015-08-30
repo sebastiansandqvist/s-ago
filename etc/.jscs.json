@@ -19,7 +19,6 @@
     },
     "disallowSpacesInsideArrayBrackets": true,
     "disallowSpacesInsideBrackets": true,
-    "disallowSpacesInsideObjectBrackets": true,
     "disallowSpacesInsideParentheses": true,
     "disallowTrailingComma": true,
     "disallowTrailingWhitespace": "ignoreEmptyLines",
