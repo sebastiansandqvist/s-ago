@@ -18,6 +18,7 @@ ago(hoursAgo); // '6 hours ago'
 ```
 
 Output is as follows:
+
 Time | Output
 --- | ---
 Less than 1 minute | `just now`
