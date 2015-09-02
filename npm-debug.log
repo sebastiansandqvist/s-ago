@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/iojs', '/usr/local/bin/npm', 'run', 'lint' ]
+2 info using npm@2.13.3
+3 info using node@v3.1.0
+4 verbose run-script [ 'prelint', 'lint', 'postlint' ]
+5 info prelint s-ago@1.0.4
+6 info lint s-ago@1.0.4
+7 verbose unsafe-perm in lifecycle true
+8 info s-ago@1.0.4 Failed to exec lint script
+9 verbose stack Error: s-ago@1.0.4 lint: `jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json`
+9 verbose stack Exit status 1
+9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at EventEmitter.emit (events.js:172:7)
+9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at ChildProcess.emit (events.js:172:7)
+9 verbose stack     at maybeClose (internal/child_process.js:764:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+10 verbose pkgid s-ago@1.0.4
+11 verbose cwd /Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-ago
+12 error Darwin 13.4.0
+13 error argv "/usr/local/bin/iojs" "/usr/local/bin/npm" "run" "lint"
+14 error node v3.1.0
+15 error npm  v2.13.3
+16 error code ELIFECYCLE
+17 error s-ago@1.0.4 lint: `jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json`
+17 error Exit status 1
+18 error Failed at the s-ago@1.0.4 lint script 'jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json'.
+18 error This is most likely a problem with the s-ago package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json
+18 error You can get their info via:
+18 error     npm owner ls s-ago
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]
