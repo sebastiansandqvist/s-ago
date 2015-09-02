@@ -1,6 +1,6 @@
 {
   "name": "s-ago",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Human readable relative times (eg. 4 minutes ago)",
   "main": "index.js",
   "directories": {
@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/sebastiansandqvist/s-ago",
   "devDependencies": {
+    "@seabass/eslint-config": "^1.0.4",
     "chai": "^3.2.0",
     "codeclimate-test-reporter": "^0.1.0",
     "eslint": "^1.3.1",
@@ -40,7 +41,6 @@
     "jscs": "^2.1.1",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
-    "mocha": "^2.2.5",
-    "s-eslint": "^1.0.1"
+    "mocha": "^2.2.5"
   }
 }
