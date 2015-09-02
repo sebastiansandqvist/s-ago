@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info && mocha --require blanket -R html-cov > etc/coverage.html",
-    "lint": "jscs index.js --config=./etc/.jscs.json && jshint --reporter=node_modules/jshint-stylish index.js --config ./etc/.jshint.json",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -dir etc --report lcovonly -- test/ -R spec",
+    "postcoverage": "rm etc/coverage.json",
+    "lint": "jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json",
     "postlint": "npm run coverage",
     "test": "mocha",
     "posttest": "npm run lint"
@@ -32,13 +33,14 @@
   },
   "homepage": "https://github.com/sebastiansandqvist/s-ago",
   "devDependencies": {
-    "blanket": "1.1.6",
     "chai": "^3.2.0",
     "codeclimate-test-reporter": "^0.1.0",
+    "eslint": "^1.3.1",
+    "eslint-config-defaults": "^6.0.0",
+    "istanbul": "^0.3.19",
     "jscs": "^2.1.1",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
-    "mocha": "^2.2.5",
-    "mocha-lcov-reporter": "0.0.2"
+    "mocha": "^2.2.5"
   }
 }

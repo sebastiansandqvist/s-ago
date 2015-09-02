@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-ago.svg)](https://www.npmjs.com/package/s-ago) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-ago.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-ago.svg)](https://travis-ci.org/sebastiansandqvist/s-ago) [![Test Coverage](https://codeclimate.com/github/sebastiansandqvist/s-ago/badges/coverage.svg)](https://codeclimate.com/github/sebastiansandqvist/s-ago/coverage) [![NPM license](https://img.shields.io/npm/l/s-ago.svg)](https://www.npmjs.com/package/s-ago)
 
-This is the smallest, fully unit tested module (25SLOC) to convert Date objects into human readable relative timestamps, such as '4 minutes ago' or 'yesterday'.
+This is the smallest, fully unit tested module (26 SLOC) to convert Date objects into human readable relative timestamps, such as '4 minutes ago' or 'yesterday'.
 
 ## Usage
 ```javascript
