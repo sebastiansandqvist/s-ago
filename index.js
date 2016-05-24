@@ -1,20 +1,20 @@
 'use strict';
 
 function format(diff, divisor, unit, prev) {
-	const val = Math.floor(diff / divisor);
-	return val <= 1 ? prev : `${val} ${unit}s ago`;
+	var val = Math.floor(diff / divisor);
+	return val <= 1 ? prev : val + ' ' + unit + 's ago';
 }
 
 function ago(date) {
 
-	const diff = Math.abs(Date.now() - date.getTime());
-	let units = ago.units;
+	var diff = Math.abs(Date.now() - date.getTime());
+	var units = ago.units;
 	
 	if (diff < 60000) { // less than a minute
 		return 'just now';
 	}
 
-	for (let i = 0; i < units.length; i++) {
+	for (var i = 0; i < units.length; i++) {
 		if (diff < units[i].max) {
 			return format(diff, units[i].value, units[i].name, units[i].prev);
 		}

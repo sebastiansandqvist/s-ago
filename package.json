@@ -1,6 +1,6 @@
 {
   "name": "s-ago",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Human readable relative times (eg. 4 minutes ago)",
   "main": "index.js",
   "directories": {
@@ -9,7 +9,7 @@
   "scripts": {
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -dir etc --report lcovonly -- test/ -R spec",
     "postcoverage": "rm etc/coverage.json",
-    "lint": "jscs index.js --config=./etc/.jscs.json && eslint index.js -c etc/.eslint.json",
+    "lint": "eslint index.js -c etc/.eslint.json",
     "postlint": "npm run coverage",
     "test": "mocha",
     "posttest": "npm run lint"

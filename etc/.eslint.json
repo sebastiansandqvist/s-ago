@@ -1,3 +1,6 @@
 {
-	"extends": "@seabass"
+	"extends": "@seabass",
+	"rules": {
+		"no-var": 0
+	}
 }
