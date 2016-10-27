@@ -1,5 +1,21 @@
 'use strict';
 
+/*
+
+Usage:
+
+var ago = require('s-ago');
+
+var now = new Date();
+var yesterday = new Date(now - (24 * 60 * 60 * 1000));
+var hoursAgo = new Date(now - (6 * 60 * 60 * 1000));
+
+ago(now); // 'just now'
+ago(yesterday); // 'yesterday'
+ago(hoursAgo); // '6 hours ago'
+
+*/
+
 function format(diff, divisor, unit, prev) {
 	var val = Math.floor(diff / divisor);
 	return val <= 1 ? prev : val + ' ' + unit + 's ago';
