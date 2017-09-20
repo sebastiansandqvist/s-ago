@@ -11,7 +11,7 @@ describe('ago', function() {
 
 	it('should return "just now" if under 1 minute', function() {
 		expect(ago(timestamp)).to.equal('just now');
-		expect(ago(new Date(timestamp + 10000))).to.equal('just now');
+		expect(ago(new Date(+timestamp + 10000))).to.equal('just now');
 	});
 
 	it('minute', function() {
