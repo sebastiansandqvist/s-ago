@@ -8,10 +8,7 @@
   },
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text ava",
-    "lint": "eslint index.js -c etc/.eslint.json",
-    "postlint": "npm run coverage",
-    "test": "ava",
-    "posttest": "npm run lint"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
