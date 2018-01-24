@@ -36,4 +36,4 @@ addons:
     repo_token: c93da2cf072402fbbe53d73c3b136f50e3d337125b6f4b1c056881adab818d2e
 script: "npm run coverage"
 after_script:
-  - codeclimate-test-reporter < etc/lcov.info
+  - codeclimate-test-reporter < coverage/lcov.info
