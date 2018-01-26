@@ -23,14 +23,13 @@
     "format"
   ],
   "author": "sebastian sandqvist",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastiansandqvist/s-ago/issues"
   },
   "homepage": "https://github.com/sebastiansandqvist/s-ago",
   "devDependencies": {
     "ava": "0.24.0",
-    "codeclimate-test-reporter": "0.1.1",
     "nyc": "11.4.1"
   }
 }
