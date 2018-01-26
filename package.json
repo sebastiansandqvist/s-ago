@@ -3,9 +3,6 @@
   "version": "1.2.1",
   "description": "Human readable relative times (eg. 4 minutes ago)",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text ava",
     "test": "ava"
