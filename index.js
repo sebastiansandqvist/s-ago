@@ -15,7 +15,7 @@ ago(hoursAgo); // '6 hours ago'
 */
 
 function format(diff, divisor, unit, prev) {
-  var val = Math.floor(diff / divisor);
+  var val = Math.round(diff / divisor);
   return val <= 1 ? prev : val + ' ' + unit + 's ago';
 }
 
