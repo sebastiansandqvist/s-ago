@@ -26,28 +26,20 @@ test('minutes', (t) => {
 test('hour', (t) => {
   const underHour = new Date(timestamp - (50 * 60 * 1000));
   const hour = new Date(timestamp - (60 * 60 * 1000));
-  const hourPlus = new Date(timestamp - (90 * 60 * 1000));
   t.is(ago(underHour), 'an hour ago');
   t.is(ago(hour), 'an hour ago');
-  t.is(ago(hourPlus), 'an hour ago');
 });
 
 test('hours', (t) => {
   const hours = new Date(timestamp - (2 * 60 * 60 * 1000));
-  const hours2 = new Date(timestamp - (3.5 * 60 * 60 * 1000));
-  const hours3 = new Date(timestamp - (19 * 60 * 60 * 1000));
+  const hours2 = new Date(timestamp - (19 * 60 * 60 * 1000));
   t.is(ago(hours), '2 hours ago');
-  t.is(ago(hours2), '3 hours ago');
-  t.is(ago(hours3), '19 hours ago');
+  t.is(ago(hours2), '19 hours ago');
 });
 
 test('yesterday', (t) => {
   const yesterday = new Date(timestamp - (20 * 60 * 60 * 1000));
-  const yesterday2 = new Date(timestamp - (40 * 60 * 60 * 1000));
-  const yesterday3 = new Date(timestamp - (47 * 60 * 60 * 1000));
   t.is(ago(yesterday), 'yesterday');
-  t.is(ago(yesterday2), 'yesterday');
-  t.is(ago(yesterday3), 'yesterday');
 });
 
 test('days', (t) => {
@@ -59,9 +51,7 @@ test('days', (t) => {
 
 test('week', (t) => {
   const week = new Date(timestamp - (6 * 24 * 60 * 60 * 1000));
-  const week2 = new Date(timestamp - (13 * 24 * 60 * 60 * 1000));
   t.is(ago(week), 'last week');
-  t.is(ago(week2), 'last week');
 });
 
 test('weeks', (t) => {
@@ -74,10 +64,8 @@ test('weeks', (t) => {
 test('month', (t) => {
   const month = new Date(timestamp - (4 * 7 * 24 * 60 * 60 * 1000));
   const month2 = new Date(timestamp - (30 * 24 * 60 * 60 * 1000));
-  const month3 = new Date(timestamp - (50 * 24 * 60 * 60 * 1000));
   t.is(ago(month), 'last month');
   t.is(ago(month2), 'last month');
-  t.is(ago(month3), 'last month');
 });
 
 test('months', (t) => {
@@ -105,3 +93,17 @@ test('years', (t) => {
   t.is(ago(years4), '100000 years ago');
 });
 
+test('boundaries', (t) => {
+  const minutes = new Date(timestamp - (1.8 * 60 * 1000));
+  const minutes2 = new Date(timestamp - (14.7 * 60 * 1000));
+  const hours = new Date(timestamp - (1.8 * 60 * 60 * 1000));
+  const hours2 = new Date(timestamp - (18.8 * 60 * 60 * 1000));
+  const years = new Date(timestamp - (1.8 * 365 * 24 * 60 * 60 * 1000));
+  const years2 = new Date(timestamp - (14.7 * 365 * 24 * 60 * 60 * 1000));
+  t.is(ago(minutes), '2 minutes ago');
+  t.is(ago(minutes2), '15 minutes ago');
+  t.is(ago(hours), '2 hours ago');
+  t.is(ago(hours2), '19 hours ago');
+  t.is(ago(years), '2 years ago');
+  t.is(ago(years2), '15 years ago');
+});
