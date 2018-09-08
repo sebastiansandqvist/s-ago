@@ -27,7 +27,7 @@ const units = [
   { max: 28512000000, value: 2592000000, name: 'month', prev: 'last month' } // max: 11 months
 ];
 
-export default function ago(date: Date): string {
+export = function ago(date: Date): string {
 
   const diff = Math.abs(Date.now() - date.getTime());
 
@@ -50,4 +50,4 @@ export default function ago(date: Date): string {
   //  }
   return format(diff, 31536000000, 'year', 'last year');
 
-}
+};

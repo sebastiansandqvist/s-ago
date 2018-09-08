@@ -1,1 +1,2 @@
-export default function ago(date: Date): string;
+declare const _default: (date: Date) => string;
+export = _default;

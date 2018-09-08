@@ -14,7 +14,6 @@ ago(yesterday); // 'yesterday'
 ago(hoursAgo); // '6 hours ago'
 
 */
-exports.__esModule = true;
 function format(diff, divisor, unit, prev) {
     var val = Math.round(diff / divisor);
     return val <= 1 ? prev : val + ' ' + unit + 's ago';
@@ -26,7 +25,7 @@ var units = [
     { max: 2419200000, value: 604800000, name: 'week', prev: 'last week' },
     { max: 28512000000, value: 2592000000, name: 'month', prev: 'last month' } // max: 11 months
 ];
-function ago(date) {
+module.exports = function ago(date) {
     var diff = Math.abs(Date.now() - date.getTime());
     // less than a minute
     if (diff < 60000)
@@ -45,5 +44,4 @@ function ago(date) {
     //    prev: 'last year'
     //  }
     return format(diff, 31536000000, 'year', 'last year');
-}
-exports["default"] = ago;
+};
