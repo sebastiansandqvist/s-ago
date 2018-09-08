@@ -3,9 +3,11 @@
   "version": "1.3.0",
   "description": "Human readable relative times (eg. 4 minutes ago)",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "coverage": "nyc --reporter=lcov --reporter=text ava",
-    "test": "ava"
+    "build": "tsc --declaration index.ts",
+    "coverage": "npm run build && nyc --reporter=lcov --reporter=text ava",
+    "test": "npm run build && ava"
   },
   "repository": {
     "type": "git",

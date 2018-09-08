@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-ago.svg)](https://www.npmjs.com/package/s-ago) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-ago.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-ago.svg)](https://travis-ci.org/sebastiansandqvist/s-ago) [![NPM license](https://img.shields.io/npm/l/s-ago.svg)](https://www.npmjs.com/package/s-ago)
 
-This is the smallest, fully unit tested module (26 SLOC) to convert Date objects into human readable relative timestamps, such as '4 minutes ago' or 'yesterday'.
+This is the smallest, fully unit tested module (25 SLOC) to convert Date objects into human readable relative timestamps, such as '4 minutes ago' or 'yesterday'.
 
 ## Usage
 ```javascript
@@ -33,30 +33,3 @@ Less than 1 minute | `just now`
 2-11 months | # `months ago`
 11-23 months | `last year`
 2+ years | # `years ago`
-
-Don't like the thresholds or output? You can customize them. Thresholds are set via each object's `max` key, and the output format for the previous 1 unit of time (eg. `yesterday` or `last week`) is set in each object's `prev` key.
-
-The default is as follows:
-```javascript
-ago.units = [
-	{ max: 2760000, value: 60000, name: 'minute', prev: 'a minute ago' }, // max: 46 minutes
-	{ max: 72000000, value: 3600000, name: 'hour', prev: 'an hour ago' }, // max: 20 hours
-	{ max: 518400000, value: 86400000, name: 'day', prev: 'yesterday' }, // max: 6 days
-	{ max: 2419200000, value: 604800000, name: 'week', prev: 'last week' }, // max: 28 days
-	{ max: 28512000000, value: 2592000000, name: 'month', prev: 'last month' }, // max: 11 months
-	{ max: Infinity, value: 31536000000, name: 'year', prev: 'last year' }
-];
-```
-
-If you want it to display `a week ago` instead of `last week` (and do the same for months and years), you would set ago.units to the following before running `ago`.
-
-```javascript
-ago.units = [
-	{ max: 2760000, value: 60000, name: 'minute', prev: 'a minute ago' }, // max: 46 minutes
-	{ max: 72000000, value: 3600000, name: 'hour', prev: 'an hour ago' }, // max: 20 hours
-	{ max: 518400000, value: 86400000, name: 'day', prev: 'yesterday' }, // max: 6 days
-	{ max: 2419200000, value: 604800000, name: 'week', prev: 'a week ago' }, // max: 28 days
-	{ max: 28512000000, value: 2592000000, name: 'month', prev: 'a month ago' }, // max: 11 months
-	{ max: Infinity, value: 31536000000, name: 'year', prev: 'a year ago' }
-];
-```
