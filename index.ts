@@ -5,8 +5,8 @@ Usage:
 var ago = require('s-ago');
 
 var now = new Date();
-var yesterday = new Date(now - (24 * 60 * 60 * 1000));
-var hoursAgo = new Date(now - (6 * 60 * 60 * 1000));
+var yesterday = new Date(now.getTime() - (24 * 60 * 60 * 1000));
+var hoursAgo = new Date(now.getTime() - (6 * 60 * 60 * 1000));
 
 ago(now); // 'just now'
 ago(yesterday); // 'yesterday'
