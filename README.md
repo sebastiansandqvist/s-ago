@@ -11,10 +11,16 @@ var ago = require('s-ago');
 var now = new Date();
 var yesterday = new Date(now - (24 * 60 * 60 * 1000));
 var hoursAgo = new Date(now - (6 * 60 * 60 * 1000));
+var yesterday = new Date(now - (24 * 60 * 60 * 1000));
+var inADay = new Date(now + (6 * 60 * 60 * 1000));
+var inSixHours = new Date(now + (6 * 60 * 60 * 1000));
 
 ago(now); // 'just now'
 ago(yesterday); // 'yesterday'
 ago(hoursAgo); // '6 hours ago'
+
+ago(inADay); // 'in a day'
+ago(inSixHours); // 'in 6 hours'
 ```
 
 Output is as follows:
