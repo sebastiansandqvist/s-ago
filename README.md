@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-ago.svg)](https://www.npmjs.com/package/s-ago) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-ago.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-ago.svg)](https://travis-ci.org/sebastiansandqvist/s-ago) [![NPM license](https://img.shields.io/npm/l/s-ago.svg)](https://www.npmjs.com/package/s-ago)
 
-This is the smallest, fully unit tested module to convert Date objects into human readable relative timestamps, such as '4 minutes ago', 'yesterday', 'tomorrow', or 'in 3 months'.
+This is the smallest, fully unit tested module to convert Date objects into human readable relative timestamps, such as `'4 minutes ago'`, `'yesterday'`, `'tomorrow'`, or `'in 3 months'`.
 
 ## Usage
 ```javascript
@@ -35,7 +35,7 @@ Less than 1 minute | `just now` | `just now`
 1-2 minutes | `a minute ago` | `in a minute`
 2-46 minutes | `# minutes ago` | `in # minutes`
 46 minutes - 2 hours | `an hour ago` | `in an hour`
-2-20 hours | # `hours ago` | `in # hours`
+2-20 hours | `# hours ago` | `in # hours`
 20-48 hours | `yesterday` | `tomorrow`
 2-6 days | `last week` | `in a week`
 7-28 days | `# weeks ago` | `in # weeks`
