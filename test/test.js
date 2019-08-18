@@ -71,7 +71,7 @@ test('yesterday', (t) => {
 test('day future', (t) => {
   const timestamp = new Date();
   const yesterday = new Date(timestamp.valueOf() + (20 * 60 * 60 * 1000));
-  t.is(ago(yesterday), 'in a day');
+  t.is(ago(yesterday), 'tomorrow');
 });
 
 test('days', (t) => {
