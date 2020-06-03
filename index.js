@@ -27,13 +27,13 @@ var units = [
     { max: 2419200000, value: 604800000, name: 'week', past: 'last week', future: 'in a week' },
     { max: 28512000000, value: 2592000000, name: 'month', past: 'last month', future: 'in a month' } // max: 11 months
 ];
-module.exports = function ago(date) {
+module.exports = function ago(date, max) {
     var diff = Date.now() - date.getTime();
     // less than a minute
     if (Math.abs(diff) < 60000)
         return 'just now';
     for (var i = 0; i < units.length; i++) {
-        if (Math.abs(diff) < units[i].max) {
+        if (Math.abs(diff) < units[i].max || (max && units[i].name === max)) {
             return format(diff, units[i].value, units[i].name, units[i].past, units[i].future, diff < 0);
         }
     }

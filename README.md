@@ -2,7 +2,9 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-ago.svg)](https://www.npmjs.com/package/s-ago) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-ago.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-ago.svg)](https://travis-ci.org/sebastiansandqvist/s-ago) [![NPM license](https://img.shields.io/npm/l/s-ago.svg)](https://www.npmjs.com/package/s-ago)
 
-This is the smallest, fully unit tested module to convert Date objects into human readable relative timestamps, such as `'4 minutes ago'`, `'yesterday'`, `'tomorrow'`, or `'in 3 months'`.
+This is the smallest, fully unit tested module to convert Date objects into human readable relative timestamps, such as `'4 minutes ago'`, `'yesterday'`, `'tomorrow'`, or `'in 3 months'`. All in 22 lines of TypeScript.
+
+You can optionally specify the maximum unit (eg. `hour`, `day`, `week`) so instead of outputting `'2 weeks ago'` you will see `'14 days ago'`.
 
 ## Usage
 ```javascript
@@ -14,6 +16,7 @@ var hoursAgo = new Date(now.getTime() - (6 * 60 * 60 * 1000));
 var yesterday = new Date(now.getTime() - (24 * 60 * 60 * 1000));
 var tomorrow = new Date(now.getTime() + (6 * 60 * 60 * 1000));
 var inSixHours = new Date(now.getTime() + (6 * 60 * 60 * 1000));
+var inTwoWeeks = new Date(now.getTime() + (2 * 7 * 24 * 60 * 60 * 1000));
 
 // present
 ago(now); // 'just now'
@@ -25,6 +28,10 @@ ago(hoursAgo); // '6 hours ago'
 // future
 ago(inSixHours); // 'in 6 hours'
 ago(tomorrow); // 'tomorrow'
+
+// max unit
+ago(inTwoWeeks);  // 'in 2 weeks'
+ago(inTwoWeeks, 'day'); // 'in 14 days'
 ```
 
 Output is as follows:

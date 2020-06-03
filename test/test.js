@@ -170,6 +170,7 @@ test('years', (t) => {
   t.is(ago(years3), '100 years ago');
   t.is(ago(years4), '100000 years ago');
 });
+
 test('years future', (t) => {
   const timestamp = new Date();
   const years = new Date(timestamp.valueOf() + (2 * 365 * 24 * 60 * 60 * 1000));
@@ -180,6 +181,21 @@ test('years future', (t) => {
   t.is(ago(years2), 'in 20 years');
   t.is(ago(years3), 'in 100 years');
   t.is(ago(years4), 'in 100000 years');
+});
+
+test('max param', (t) => {
+  const weeks = new Date(timestamp.valueOf() - (2 * 7 * 24 * 60 * 60 * 1000));
+  const weeks2 = new Date(timestamp.valueOf() - (3 * 7 * 24 * 60 * 60 * 1000));
+  t.is(ago(weeks, 'day'), '14 days ago');
+  t.is(ago(weeks2, 'day'), '21 days ago');
+});
+
+test('max param future', (t) => {
+  const timestamp = new Date();
+  const weeks = new Date(timestamp.valueOf() + (2 * 7 * 24 * 60 * 60 * 1000));
+  const weeks2 = new Date(timestamp.valueOf() + (3 * 7 * 24 * 60 * 60 * 1000));
+  t.is(ago(weeks, 'day'), 'in 14 days');
+  t.is(ago(weeks2, 'day'), 'in 21 days');
 });
 
 test('boundaries', (t) => {

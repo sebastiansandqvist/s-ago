@@ -1,6 +1,6 @@
 {
   "name": "s-ago",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Human readable relative times (eg. 4 minutes ago)",
   "main": "index.js",
   "types": "index.d.ts",
