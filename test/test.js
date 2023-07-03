@@ -228,3 +228,33 @@ test('boundaries future', (t) => {
   t.is(ago(years), 'in 2 years');
   t.is(ago(years2), 'in 15 years');
 });
+
+test('custom units', (t) => {
+  const shortUnits = [
+    { max: 2760000, value: 60000, name: 'minute', past: '1m ago', future: 'in 1m', plural: 'm' }, // max: 46 minutes
+    { max: 72000000, value: 3600000, name: 'hour', past: '1h ago', future: 'in 1h', plural: 'h' }, // max: 20 hours
+    { max: Infinity, value: 86400000, name: 'day', past: '1d ago', future: 'in 1d', plural: 'd' }, // max: Infinity
+  ];
+
+  // past
+  {
+    t.is(ago(new Date(timestamp.valueOf() - (60 * 1000)), 'day', shortUnits), '1m ago');
+    t.is(ago(new Date(timestamp.valueOf() - (1.8 * 60 * 1000)), 'day', shortUnits), '2m ago');
+    t.is(ago(new Date(timestamp.valueOf() - (14.7 * 60 * 1000)), 'day', shortUnits), '15m ago');
+    t.is(ago(new Date(timestamp.valueOf() - (1.8 * 60 * 60 * 1000)), 'day', shortUnits), '2h ago');
+    t.is(ago(new Date(timestamp.valueOf() - (18.8 * 60 * 60 * 1000)), 'day', shortUnits), '19h ago');
+    t.is(ago(new Date(timestamp.valueOf() - (24 * 60 * 60 * 1000)), 'day', shortUnits), '1d ago');
+    t.is(ago(new Date(timestamp.valueOf() - (45 * 24 * 60 * 60 * 1000)), 'day', shortUnits), '45d ago');
+  }
+
+  // future
+  {
+    t.is(ago(new Date(timestamp.valueOf() + (70 * 1000)), 'day', shortUnits), 'in 1m');
+    t.is(ago(new Date(timestamp.valueOf() + (1.8 * 60 * 1000)), 'day', shortUnits), 'in 2m');
+    t.is(ago(new Date(timestamp.valueOf() + (14.7 * 60 * 1000)), 'day', shortUnits), 'in 15m');
+    t.is(ago(new Date(timestamp.valueOf() + (1.8 * 60 * 60 * 1000)), 'day', shortUnits), 'in 2h');
+    t.is(ago(new Date(timestamp.valueOf() + (18.8 * 60 * 60 * 1000)), 'day', shortUnits), 'in 19h');
+    t.is(ago(new Date(timestamp.valueOf() + (24 * 60 * 60 * 1000)), 'day', shortUnits), 'in 1d');
+    t.is(ago(new Date(timestamp.valueOf() + (45 * 24 * 60 * 60 * 1000)), 'day', shortUnits), 'in 45d');
+  }
+});
